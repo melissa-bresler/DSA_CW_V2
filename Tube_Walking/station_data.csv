@@ -1,63 +1,63 @@
-﻿ID,Station,Lines
-0,Elephant & Castle,Bakerloo-Northern
-1,Lambeth North,Bakerloo 
-2,Waterloo,Bakerloo-Northern-Jubilee-Waterloo & City
-3,Embankment,Bakerloo-Northern-Circle-District
-4,Charing Cross,Bakerloo-Northern
-5,Piccadilly Circus,Bakerloo-Piccadilly
-6,Oxford Circus,Bakerloo-Central-Victoria
-7,Regent's Park,Bakerloo
-8,Baker Street,Bakerloo-Jubilee-Hammersmith & City-Circle-Metropolitan
-9,Marylebone,Bakerloo
-10,Edgware Road,Bakerloo
-11,Notting Hill Gate,Central-Circle-District
-12,Queensway,Central 
-13,Lancaster Gate,Central
-14,Marble Arch,Central
-15,Bond Street,Central-Jubilee
-16,Tottenham Court Road,Central-Northern
-17,Holborn,Central-Piccadilly
-18,Chancery Lane,Central
-19,St. Paul's,Central
-20,Bank,Central-Northern-Waterloo & City
-21,Tower Hill,Circle-District
-22,Paddington,Circle-District-Bakerloo-Hammersmith & City-
-23,Bayswater,Circle-District
-24,High Street Kensington,Circle-District
-25,Gloucester Road,Circle-District-Piccadilly
-26,South Kensington,Circle-District-Piccadilly
-27,Sloane Square,Circle-District
-28,Victoria,Circle-District-Victoria
-29,St. James's Park,Circle-District
-30,Westminster,Circle-District-Jubilee
-31,Temple,Circle-District
-32,Blackfriars,Circle-District
-33,Mansion House,Circle-District
-34,Cannon Street,Circle-District
-35,Monument,Circle-District
-36,Liverpool Street,Circle-Metropolitan-Hammersmith & City
-37,Green Park,Piccadilly-Jubilee-Victoria
-38,Southwark,Jubilee
-39,Aldgate,Circle-Metropolitan 
-40,Moorgate,Circle-Metropolitan-Hammersmith & City-Northern
-41,Barbican,Circle-Metropolitan-Hammersmith & City
-42,Farringdon,Circle-Metropolitan-Hammersmith & City
-43,King's Cross St Pancras,Circle-Metropolitan-Hammersmith & City-Northern-Piccadilly-Victoria
-44,Euston Square,Circle-Metropolitan-Hammersmith & City
-45,Great Portland Street,Circle-Metropolitan-Hammersmith & City
-46,Euston,Northern-Victoria
-47,Warren Street,Northern-Victoria
-48,Goodge Street,Northern 
-49,Leicester Square,Northern-Piccadilly
-50,Borough,Northern
-51,London Bridge,Northern-Jubilee
-52,Old Street,Northern
-53,Angel,Northern
-54,Russell Square,Piccadilly 
-55,Covent Garden,Piccadilly
-56,Hyde Park Corner,Piccadilly
-57,Knightsbridge,Piccadilly
-58,Pimlico,Victoria
-59,Earl's Court,Piccadilly-Circle-District
-60,Aldgate East,District-Hammersmith & City
-61,Vauxhall,Victoria
+﻿ID,Station,Lines,StationAccess,Open
+0,Elephant & Castle,Bakerloo-Northern,Stairs,1
+1,Lambeth North,Bakerloo,Escalator,1
+2,Waterloo,Bakerloo-Northern-Jubilee-Waterloo & City,Lift,1
+3,Embankment,Bakerloo-Northern-Circle-District,Stairs,1
+4,Charing Cross,Bakerloo-Northern,Escalator,0
+5,Piccadilly Circus,Bakerloo-Piccadilly,Lift,1
+6,Oxford Circus,Bakerloo-Central-Victoria,Stairs,1
+7,Regent's Park,Bakerloo,Escalator,1
+8,Baker Street,Bakerloo-Jubilee-Hammersmith & City-Circle-Metropolitan,Lift,1
+9,Marylebone,Bakerloo,Stairs,1
+10,Edgware Road,Bakerloo,Escalator,1
+11,Notting Hill Gate,Central-Circle-District,Lift,1
+12,Queensway,Central,Stairs,1
+13,Lancaster Gate,Central,Escalator,1
+14,Marble Arch,Central,Lift,0
+15,Bond Street,Central-Jubilee,Stairs,1
+16,Tottenham Court Road,Central-Northern,Escalator,1
+17,Holborn,Central-Piccadilly,Lift,1
+18,Chancery Lane,Central,Stairs,1
+19,St. Paul's,Central,Escalator,1
+20,Bank,Central-Northern-Waterloo & City,Lift,1
+21,Tower Hill,Circle-District,Stairs,1
+22,Paddington,Circle-District-Bakerloo-Hammersmith & City-,Escalator,0
+23,Bayswater,Circle-District,Stairs,1
+24,High Street Kensington,Circle-District,Escalator,1
+25,Gloucester Road,Circle-District-Piccadilly,Lift,1
+26,South Kensington,Circle-District-Piccadilly,Stairs,1
+27,Sloane Square,Circle-District,Escalator,1
+28,Victoria,Circle-District-Victoria,Lift,1
+29,St. James's Park,Circle-District,Stairs,1
+30,Westminster,Circle-District-Jubilee,Escalator,1
+31,Temple,Circle-District,Lift,1
+32,Blackfriars,Circle-District,Stairs,1
+33,Mansion House,Circle-District,Escalator,0
+34,Cannon Street,Circle-District,Lift,1
+35,Monument,Circle-District,Stairs,1
+36,Liverpool Street,Circle-Metropolitan-Hammersmith & City,Escalator,1
+37,Green Park,Piccadilly-Jubilee-Victoria,Lift,1
+38,Southwark,Jubilee,Stairs,1
+39,Aldgate,Circle-Metropolitan ,Escalator,1
+40,Moorgate,Circle-Metropolitan-Hammersmith & City-Northern,Lift,1
+41,Barbican,Circle-Metropolitan-Hammersmith & City,Stairs,1
+42,Farringdon,Circle-Metropolitan-Hammersmith & City,Escalator,1
+43,King's Cross St Pancras,Circle-Metropolitan-Hammersmith & City-Northern-Piccadilly-Victoria,Lift,0
+44,Euston Square,Circle-Metropolitan-Hammersmith & City,Stairs,1
+45,Great Portland Street,Circle-Metropolitan-Hammersmith & City,Escalator,1
+46,Euston,Northern-Victoria,Stairs,1
+47,Warren Street,Northern-Victoria,Escalator,1
+48,Goodge Street,Northern ,Lift,1
+49,Leicester Square,Northern-Piccadilly,Stairs,1
+50,Borough,Northern,Escalator,1
+51,London Bridge,Northern-Jubilee,Lift,1
+52,Old Street,Northern,Stairs,0
+53,Angel,Northern,Escalator,1
+54,Russell Square,Piccadilly ,Lift,1
+55,Covent Garden,Piccadilly,Stairs,1
+56,Hyde Park Corner,Piccadilly,Escalator,1
+57,Knightsbridge,Piccadilly,Lift,1
+58,Pimlico,Victoria,Stairs,1
+59,Earl's Court,Piccadilly-Circle-District,Escalator,1
+60,Aldgate East,District-Hammersmith & City,Lift,1
+61,Vauxhall,Victoria,Stairs,1

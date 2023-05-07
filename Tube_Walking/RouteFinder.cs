@@ -1,5 +1,5 @@
 ﻿using System;
-using static System.Collections.Specialized.BitVector32;
+using System.Collections.Generic;
 
 
 namespace Tube_Walking_Guide
@@ -9,16 +9,18 @@ namespace Tube_Walking_Guide
         public WalkingRoute[] Routes { get; set; }
         private WalkingRoute[] edgeTo = new WalkingRoute[88];
         private int[] distTo = new int[88];
-        private PriorityQueue priQueue = new PriorityQueue();
-        public Station[] Stations { get; set; }
+        private PriorityQueue<Station, Array> priQueueDotNet = new PriorityQueue<Station, Array>();  //.Net Priority Queue
+        //public Station[] Stations { get; set; }
+        public List<Station> Stations { get; set; }
 
         public int[,] NetworkMatrix { get; set; }
-        public RouteFinder(WalkingRoute[] routes, Station[] stations)
+
+        public RouteFinder(WalkingRoute[] routes, List<Station> stations)
         {
             Routes = routes;
             Stations = stations;
 
-            int[,] NetworkMatrix = new int[Stations.Length, Stations.Length];
+            int[,] NetworkMatrix = new int[Stations.Count, Stations.Count];
             foreach (WalkingRoute route in Routes)
             {
                 if (route.IsOpen == true)
@@ -37,7 +39,7 @@ namespace Tube_Walking_Guide
         // Returns EdgeTo array from lecture
         private void DjiktrasShortestPath(Station start)
         {
-            int stationsToVisit = Stations.Length;
+            int stationsToVisit = Stations.Count;
 
             for (int stationID = 0; stationID < stationsToVisit; stationID++)
             {
@@ -46,11 +48,12 @@ namespace Tube_Walking_Guide
             distTo[start.StationID] = 0;
 
 
-            priQueue.Enqueue(start, distTo);
+            priQueueDotNet.Enqueue(start, distTo);  //.Net Priority Queue
 
-            while (!priQueue.IsEmpty())
-            {
-                Station nearestStation = priQueue.Dequeue(distTo);
+
+            while (priQueueDotNet.Count > 0)
+            {  //.Net Priority Queue
+                Station nearestStation = priQueueDotNet.Dequeue(); //.Net Priority Queue
                 for (int i = 0; i < stationsToVisit; i++)
                 {
                     int walkingTime = NetworkMatrix[nearestStation.StationID, i];
@@ -74,14 +77,14 @@ namespace Tube_Walking_Guide
                 distTo[end.StationID] = distTo[start.StationID] + route.TotalTime;
 
                 edgeTo[end.StationID] = route;
-                priQueue.Enqueue(end, distTo);
+                priQueueDotNet.Enqueue(end, distTo); //.Net Priority Queue
             }
         }
-        // Returns path from start to finish - To do
-        private Station[] FindWalkingRoute(Station start, Station destination)
+        // Returns path from start to finish
+        private List<Station> FindWalkingRoute(Station start, Station destination)
         {
             DjiktrasShortestPath(start);
-            Station[] finalRoute = new Station[0];
+            List<Station> finalRoute = new List<Station>(); //.Net List instead of Array
             Station previousStation = destination;
             while (true)
             {
@@ -98,22 +101,20 @@ namespace Tube_Walking_Guide
                     if (edgeTo[i].EndStation.StationID == previousStation.StationID)
                     {
                         previousStation = edgeTo[i].StartStation;
-                        finalRoute = Utils.ExtendStationArray(finalRoute);
-                        finalRoute[finalRoute.Length - 1] = previousStation;
+                        finalRoute.Add(previousStation);
                     }
 
                 }
 
             }
-            Array.Reverse(finalRoute);
-            finalRoute = Utils.ExtendStationArray(finalRoute);
-            finalRoute[finalRoute.Length - 1] = destination;
+            finalRoute.Reverse(); //.Net Method
+            finalRoute.Add(destination);//.Net Method
             return finalRoute;
         }
 
         public string PublishRoute(Station start, Station finish)
         {
-            Station[] fastestRoute = FindWalkingRoute(start, finish);
+            List<Station> fastestRoute = FindWalkingRoute(start, finish); //.Net List instead of Array
             int routeTime = 0;
             int lineNo = 1;
             int timeBeforeChange = 0;
@@ -122,12 +123,12 @@ namespace Tube_Walking_Guide
             string currentLine = CommonLineExists(GetStationDetails(fastestRoute[0]),
                 GetStationDetails(fastestRoute[1]));
             Station sectionStart = GetStationDetails(fastestRoute[0]);
-            Station sectionEnd = GetStationDetails(fastestRoute[fastestRoute.Length - 1]);
+            Station sectionEnd = GetStationDetails(fastestRoute[fastestRoute.Count - 1]);
 
             string route = $"Route:\t{sectionStart.Name} to {sectionEnd.Name}\n\n";
             route += $"({lineNo}) Start: \t{sectionStart.Name} ({currentLine})\n\n";
             lineNo++;
-            for (int i = 0; i < fastestRoute.Length; i++)
+            for (int i = 0; i < fastestRoute.Count; i++)
             {
                 Station previousStop = fastestRoute[i];
                 Station nextStop = fastestRoute[i + 1];
@@ -149,7 +150,7 @@ namespace Tube_Walking_Guide
                     lineNo++;
                     // print Change: Station (previous) to Station (currentLine)
                 }
-                if (i <= fastestRoute.Length - 3)
+                if (i <= fastestRoute.Count - 3)
                 {
                     if (CommonLineExists(GetStationDetails(fastestRoute[i]),
                                         GetStationDetails(fastestRoute[i + 2])) !=
@@ -165,7 +166,7 @@ namespace Tube_Walking_Guide
                     timeBeforeChange += NetworkMatrix[previousStop.StationID, nextStop.StationID];
                     routeTime += NetworkMatrix[previousStop.StationID, nextStop.StationID];
                 }
-                if (i == fastestRoute.Length - 2)
+                if (i == fastestRoute.Count - 2)
                 {
                     sectionEnd = GetStationDetails(fastestRoute[i + 1]);
                     route += $"({lineNo}) \t\t{sectionStart.Name} ({currentLine}) to {sectionEnd.Name} ({currentLine}) {timeBeforeChange} min\n\n";
@@ -186,7 +187,7 @@ namespace Tube_Walking_Guide
         }
         private Station GetStationDetails(Station undetailed)
         {
-            for (int i = 0; i < Stations.Length; i++)
+            for (int i = 0; i < Stations.Count; i++)
             {
                 if (undetailed.StationID == Stations[i].StationID)
                 {

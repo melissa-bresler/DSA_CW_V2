@@ -1,7 +1,8 @@
 ﻿using System;
 using System.IO;
 using Tube_Walking_Guide;
-using static System.Collections.Specialized.BitVector32;
+using System.Reflection;
+using System.Runtime.InteropServices;
 
 namespace Tube_Walking_Calc
 {
@@ -9,22 +10,24 @@ namespace Tube_Walking_Calc
     {
         static void Main(string[] args)
         {
-            //string[] stationData = File.ReadAllLines("C:\\Dev\\DS_A\\Tube_Walking_Guide\\Tube_Walking_Guide\\station_data.csv"); //Change this
             string[] stationData = File.ReadAllLines("/Users/melissabresler/Projects/DSA_CW/Tube_Walking/station_data.csv");
-            Station[] stations = new Station[stationData.Length - 1];
+            //Station[] stations = new Station[stationData.Length - 1];
+            List<Station> stations = new List<Station>();
 
             for (int i = 1; i < stationData.Length; i++)
             {
                 string[] values = stationData[i].Split(',');
                 int id = int.Parse(values[0]);
                 string stationName = values[1];
+                string access = values[3];
                 string[] stationLines = values[2].Split('-');
+                int open = int.Parse(values[4]);
 
-                stations[i - 1] = new Station(id, stationName, stationLines);
+                //stations[i - 1] = new Station(id, stationName, stationLines, access, open);
+                stations.Add(new Station(id, stationName, stationLines, access, open));
 
             }
 
-            //string[] lines = File.ReadAllLines("C:\\Dev\\DS_A\\Tube_Walking_Guide\\Tube_Walking_Guide\\journey_data.csv"); //Change this
             string[] lines = File.ReadAllLines("/Users/melissabresler/Projects/DSA_CW/Tube_Walking/journey_data.csv");
             WalkingRoute[] routes = new WalkingRoute[lines.Length - 1];
 
@@ -57,18 +60,8 @@ namespace Tube_Walking_Calc
                 routes[i - 1] = new WalkingRoute(values[0], station1, station2, time);
             }
 
-            //RouteFinder routeFinder = new RouteFinder(routes, stations);
             Menu menu = new Menu(stations, routes);
-
-            //foreach (WalkingRoute route in routes)
-            //{
-             //   Console.WriteLine("Start: " + route.StartStation.Name);
-              //  Console.WriteLine("End: " + route.EndStation.Name);
-               // Console.WriteLine();
-            //}
             menu.MainMenu();
-            //string testRoute = routeFinder.PublishRoute(stations[14], stations[45]);
-            //Console.WriteLine(testRoute);
         }
 
     }

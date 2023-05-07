@@ -1,5 +1,4 @@
 ﻿using System;
-using static System.Collections.Specialized.BitVector32;
 
 
 namespace Tube_Walking_Guide
@@ -29,7 +28,7 @@ namespace Tube_Walking_Guide
             EstimatedTime = estimatedTime;
             DelayTime = 0;
             DelayReason = null;
-            TotalTime = EstimatedTime + DelayTime;
+            TotalTime = EstimatedTime;
             IsOpen = true;
             ClosureReason = null;
         }
