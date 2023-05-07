@@ -21,6 +21,19 @@ namespace Tube_Walking_Guide
             LinesConnectedTo = lines;
         }
 
+        public override string ToString()
+        {
+            string lines = $"Lines=\n";
+
+            for (int i = 0; i < LinesConnectedTo.Length; i++)
+            {
+                lines += $"          {LinesConnectedTo[i]}\n";
+            }
+
+            return $"Station ID = {StationID}\n" +
+                $"Name = {Name}\n" +
+                lines;
+        }
 
     }
 }

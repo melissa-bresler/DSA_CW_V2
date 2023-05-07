@@ -59,6 +59,13 @@ namespace Tube_Walking_Calc
 
             //RouteFinder routeFinder = new RouteFinder(routes, stations);
             Menu menu = new Menu(stations, routes);
+
+            //foreach (WalkingRoute route in routes)
+            //{
+             //   Console.WriteLine("Start: " + route.StartStation.Name);
+              //  Console.WriteLine("End: " + route.EndStation.Name);
+               // Console.WriteLine();
+            //}
             menu.MainMenu();
             //string testRoute = routeFinder.PublishRoute(stations[14], stations[45]);
             //Console.WriteLine(testRoute);

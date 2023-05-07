@@ -69,12 +69,40 @@ namespace Tube_Walking_Calc
 
                         if (mMenu == "1")
                         {
-                            WalkingRoute routeToDelay = RouteSelector();
+
+                            Console.Clear();
+                            int tab = 0;
+                            Console.WriteLine("Stations:");
+                            for (int i = 0; i < stationInfo.Length; i++)
+                            {
+                                if (tab == 1)
+                                {
+                                    tab = 0;
+                                    Console.WriteLine($"{i + 1}. {stationInfo[i].Name}\n");
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"{i + 1}. {stationInfo[i].Name}\t");
+                                }
+                            }
+                            Console.WriteLine();
+                            Console.Write("Start of delayed route: ");
+                            int choice = Convert.ToInt32(Console.ReadLine());
+                            Station start = stationInfo[choice - 1];
+
+                            Console.Write("End of delayed route: ");
+                            int choice2 = Convert.ToInt32(Console.ReadLine());
+                            Station end = stationInfo[choice2 - 1];
+
+                            Console.Clear();
+
+                            bool routeFound = false;
 
                             foreach (WalkingRoute route in routeInfo)
                             {
-                                if (route.Equals(routeToDelay))
+                                if (route.StartStation == start && route.EndStation == end)
                                 {
+                                    routeFound = true;
                                     Console.Write("Assign delay: ");
                                     int delay = Convert.ToInt32(Console.ReadLine());
                                     Console.Write("Delay reason: ");
@@ -85,9 +113,16 @@ namespace Tube_Walking_Calc
                                     Console.WriteLine("Success");
                                     Console.WriteLine("Press any key to continue.");
                                     Console.ReadKey();
-
                                 }
                             }
+                            if (routeFound == false)
+                            {
+                                Console.WriteLine();
+                                Console.WriteLine("Route not found");
+                                Console.WriteLine("Press any key to continue.");
+                                Console.ReadKey();
+                            }
+
                         }//Add or remove delay
                         else if (mMenu == "2")
                         {
@@ -198,7 +233,36 @@ namespace Tube_Walking_Calc
                             Console.WriteLine("Press any key to continue.");
                             Console.ReadKey();
                         }//Find a route
-                        else if (cMenu == "2") { }//Display information
+                        else if (cMenu == "2")
+                        {
+                            Console.Clear();
+                            int tab = 0;
+                            Console.WriteLine("Please select station: ");
+                            for (int i = 0; i < stationInfo.Length; i++)
+                            {
+                                if (tab == 1)
+                                {
+                                    tab = 0;
+                                    Console.WriteLine($"{i + 1}. {stationInfo[i].Name}\n");
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"{i + 1}. {stationInfo[i].Name}\t");
+                                }
+                            }
+                            Console.WriteLine();
+                            Console.Write("Selection: ");
+                            int choice = Convert.ToInt32(Console.ReadLine());
+
+                            Station station = stationInfo[choice - 1];
+                            Console.Clear();
+                            Console.WriteLine(station.ToString());
+                            Console.WriteLine();
+                            Console.WriteLine("Press any key to continue.");
+                            Console.ReadKey();
+                            Console.Clear();
+
+                        }//Display information
                         else if (cMenu == "3")
                         {
                             exitC = "true";
@@ -214,14 +278,7 @@ namespace Tube_Walking_Calc
                     }
 
                 }
-                else
-                {
-                    Console.Clear();
-                    //Console.WriteLine();
-                    Console.WriteLine($"Option {menuS} does not exist.");
-                    Console.WriteLine("Press any key to continue.");
-                    Console.ReadKey();
-                }//Error message
+                
             }//end of programme loop
         }
 
