@@ -1,0 +1,15 @@
+/Users/melissabresler/Projects/DSA_CW/Tube_Walking/bin/Debug/net6.0/Tube_Walking_Guide
+/Users/melissabresler/Projects/DSA_CW/Tube_Walking/bin/Debug/net6.0/Tube_Walking_Guide.deps.json
+/Users/melissabresler/Projects/DSA_CW/Tube_Walking/bin/Debug/net6.0/Tube_Walking_Guide.runtimeconfig.json
+/Users/melissabresler/Projects/DSA_CW/Tube_Walking/bin/Debug/net6.0/Tube_Walking_Guide.dll
+/Users/melissabresler/Projects/DSA_CW/Tube_Walking/bin/Debug/net6.0/Tube_Walking_Guide.pdb
+/Users/melissabresler/Projects/DSA_CW/Tube_Walking/obj/Debug/net6.0/Tube_Walking_Guide.csproj.AssemblyReference.cache
+/Users/melissabresler/Projects/DSA_CW/Tube_Walking/obj/Debug/net6.0/Tube_Walking_Guide.GeneratedMSBuildEditorConfig.editorconfig
+/Users/melissabresler/Projects/DSA_CW/Tube_Walking/obj/Debug/net6.0/Tube_Walking_Guide.AssemblyInfoInputs.cache
+/Users/melissabresler/Projects/DSA_CW/Tube_Walking/obj/Debug/net6.0/Tube_Walking_Guide.AssemblyInfo.cs
+/Users/melissabresler/Projects/DSA_CW/Tube_Walking/obj/Debug/net6.0/Tube_Walking_Guide.csproj.CoreCompileInputs.cache
+/Users/melissabresler/Projects/DSA_CW/Tube_Walking/obj/Debug/net6.0/Tube_Walking_Guide.dll
+/Users/melissabresler/Projects/DSA_CW/Tube_Walking/obj/Debug/net6.0/refint/Tube_Walking_Guide.dll
+/Users/melissabresler/Projects/DSA_CW/Tube_Walking/obj/Debug/net6.0/Tube_Walking_Guide.pdb
+/Users/melissabresler/Projects/DSA_CW/Tube_Walking/obj/Debug/net6.0/Tube_Walking_Guide.genruntimeconfig.cache
+/Users/melissabresler/Projects/DSA_CW/Tube_Walking/obj/Debug/net6.0/ref/Tube_Walking_Guide.dll

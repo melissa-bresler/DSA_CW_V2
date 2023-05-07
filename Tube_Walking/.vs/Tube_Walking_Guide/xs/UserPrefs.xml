@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{7BF75625-C1CD-4129-BBEA-819C99F941D0}|Default">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Menu.cs">
+    <Files>
+      <File FileName="Menu.cs" Line="168" Column="1" IsPinned="True" />
+      <File FileName="LinkedList.cs" Line="5" Column="2" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Tube_Walking_Guide" expanded="True">
+            <Node name="Tube_Walking_Guide" expanded="True">
+              <Node name="Menu.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Tube__Walking__Guide PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

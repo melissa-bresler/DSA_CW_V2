@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Tube_Walking_Guide/1.0.0": {
+        "runtime": {
+          "Tube_Walking_Guide.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Tube_Walking_Guide/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
